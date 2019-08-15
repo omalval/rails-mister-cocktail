@@ -13,6 +13,11 @@
   </head>
 
   <body>
+  </div>
+    <div class="navbar">
+    <span>Mister Cocktails</span>
+    <%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn-dark" %>
+    </div>
     <%= yield %>
     <%= javascript_include_tag "application" %>
     <%= javascript_pack_tag "application" %>

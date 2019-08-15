@@ -1,0 +1,16 @@
+<div class="big-image"> </div>
+<div class="container mt-3 col-6 offset-3">
+<h2><%= @cocktail.name %></h2>
+<p> Ingredients </p>
+  <% @cocktail.doses.each do |dose| %>
+    <p> <%= dose.description %> - <%= dose.ingredient.name %>
+    <%= link_to "Remove", dose_path(dose), class:"btn btn-outline-dark",
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    </p>
+  <% end %>
+  <div class="button-show">
+<p> <%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail), class:"btn btn-dark" %> </p>
+<p> <%= link_to 'Go back to list', cocktails_path, class:"btn btn-light" %>
+</p>
+</div>
