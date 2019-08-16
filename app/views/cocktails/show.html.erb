@@ -1,16 +1,24 @@
 <div class="big-image"> </div>
-<div class="container mt-3 col-6 offset-3">
-<h2><%= @cocktail.name %></h2>
-<p> Ingredients </p>
-  <% @cocktail.doses.each do |dose| %>
-    <p> <%= dose.description %> - <%= dose.ingredient.name %>
-    <%= link_to "Remove", dose_path(dose), class:"btn btn-outline-dark",
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-    </p>
-  <% end %>
+<div class="container mt-3">
+  <div class="ingredients">
+    <div class="ingredient-title">
+      <h2><%= @cocktail.name %></h2>
+    </div>
+  <div class="ingredient-details">
+    <p> Ingredients </p>
+    <% @cocktail.doses.each do |dose| %>
+      <p> <%= dose.description %> - <%= dose.ingredient.name %>
+      <%= link_to "Remove", dose_path(dose), class:"btn btn-outline-dark",
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+      </p>
+    <% end %>
+  </div>
+</div>
+  <div class="add-ingredient">
+  <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+  </div>
   <div class="button-show">
-<%= render "doses/new", cocktail: @cocktail, dose: @dose %>
-<p> <%= link_to 'Go back to list', cocktails_path, class:"btn btn-light" %>
-</p>
+  <p> <%= link_to 'Go back to list', cocktails_path, class:"btn btn-light" %>
+  </p>
 </div>
