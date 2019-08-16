@@ -7,11 +7,15 @@
     <div class="card">
     <%= link_to cocktail_path(cocktail) do %>
     <div class="small-pic">
+      <% if cocktail.photo %>
+      # <%= image_tag cocktail.photo.url(:thumbnail) %>
+      <% else %>
+      <%= image_tag 'cock.jpg' %>
+      <% end %>
     </div>
       <div class="name">
         <h2><%= cocktail.name %> </h2>
       </div>
-
       <% end %>
     </div>
   <% end %>

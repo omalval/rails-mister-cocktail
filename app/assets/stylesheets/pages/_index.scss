@@ -1,2 +1,29 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "card";
+
+
+.cocktails {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cocktails h1 {
+  text-align: center;
+  font-size: 72px;
+  color: rgb(280, 280, 280);
+}
+
+.large-pic {
+  width: 100%;
+  background-image: asset-url('cock.jpg');
+  background-size: cover;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
