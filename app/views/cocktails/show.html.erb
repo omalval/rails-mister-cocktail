@@ -10,7 +10,7 @@
     </p>
   <% end %>
   <div class="button-show">
-<p> <%= link_to 'Add an ingredient', new_cocktail_dose_path(@cocktail), class:"btn btn-dark" %> </p>
+<%= render "doses/new", cocktail: @cocktail, dose: @dose %>
 <p> <%= link_to 'Go back to list', cocktails_path, class:"btn btn-light" %>
 </p>
 </div>

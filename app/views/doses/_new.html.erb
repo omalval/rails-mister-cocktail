@@ -1,5 +1,5 @@
 <div class="container mt-5 col-6 offset-3">
-<h1> Add an ingredient </h1>
+<h2> Add an ingredient </h2>
   <div class="form-cocktail">
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :description %>
@@ -7,6 +7,4 @@
     <%= f.submit "add it", class: "btn btn-primary" %>
   <% end %>
   </div>
-  <br/>
-  <div class="btn btn-dark"> <%= link_to 'Go back to cocktail', cocktail_path(@cocktail) %>
 </div>
