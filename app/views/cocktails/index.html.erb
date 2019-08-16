@@ -5,14 +5,14 @@
 <div class="grid-cards">
   <% @cocktails.each do |cocktail| %>
     <div class="card">
-    <%= link_to cocktail_path(cocktail) do %>
-    <div class="small-pic">
+      <div class="small-pic">
       <% if cocktail.photo %>
-      # <%= image_tag cocktail.photo.url(:thumbnail) %>
+        <%= image_tag cocktail.photo.url(:thumbnail) %>
       <% else %>
-      <%= image_tag 'cock.jpg' %>
+        <%= image_tag 'cock.jpg' %>
       <% end %>
     </div>
+    <%= link_to cocktail_path(cocktail) do %>
       <div class="name">
         <h2><%= cocktail.name %> </h2>
       </div>
